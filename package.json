@@ -1,6 +1,6 @@
 {
   "name": "touch-win",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "description": "This package written in JavaScript allows you to use the Linux \"touch\" command on Windows.",
   "main": "./index.js",
   "bin": {
@@ -21,9 +21,6 @@
     "windows",
     "cli"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "author": "Oscar Ortiz <dev.oscarortiz@gmail.com>",
   "license": "MIT",
   "bugs": {
