@@ -1,0 +1,34 @@
+{
+  "name": "touch-win",
+  "version": "0.1.0",
+  "description": "This package written in JavaScript allows you to use the Linux \"touch\" command on Windows.",
+  "main": "./bin/touch-win.js",
+  "bin": {
+    "touch-win": "bin/touch-win.js"
+  },
+  "scripts": {
+    "start": "node ./bin/touch-win.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zitrocode/touch-win.git"
+  },
+  "keywords": [
+    "touch",
+    "linux",
+    "command",
+    "commands",
+    "windows",
+    "cli"
+  ],
+  "author": "Oscar Ortiz <dev.oscarortiz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zitrocode/touch-win/issues"
+  },
+  "homepage": "https://github.com/zitrocode/touch-win#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
