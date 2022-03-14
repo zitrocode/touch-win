@@ -1,10 +1,7 @@
 const fs = require("fs");
-const path = require("path");
 const colors = require("colors");
 
-const touch = (filename) => {
-  filename = path.normalize(filename);
-
+const touch = (filename, verbose) => {
   if (fs.existsSync(filename)) {
     console.log(colors.yellow(`"${filename}" already exists`));
     return;

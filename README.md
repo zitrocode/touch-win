@@ -18,6 +18,11 @@ npm install -g touch-win
 touch-win [options] [files ...]
 ```
 
+**Use the command `touch-win -h` or `touch-win --help` for more information**
+
+### Features
+- Allows you to create multiple files with a single command.
+- Automatically creates the necessary folders for the location of the file to create if it does not exist. `touch-win src/bin/app.js`
 #### Examples
 
 ```bash
@@ -25,7 +30,7 @@ touch-win my_file.txt
 ```
 
 ```bash
-touch-win index.html style.css main.js
+touch-win index.html css/style.css js/main.js
 ```
 
 :warning: **This package is still under development, so it may have some bugs.**
