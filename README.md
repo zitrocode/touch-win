@@ -15,7 +15,7 @@ npm install -g touch-win
 ### Usage
 
 ```bash
-touch-win [filename]
+touch-win [options] [files ...]
 ```
 
 #### Examples
