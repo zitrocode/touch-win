@@ -40,11 +40,22 @@ Examples:
 ### Base
 This option allows you to create files from a base path, this will help you not to repeat the same path in each file.
 
-#### Example
+### Examples
 ```bash
-touch-win --base src/components/new_component component.js style.sass
+# Usage normal
+touch-win src/bin/cli.js src/helpers/file.js src/helpers/directory.js
+
+# Return
+successfully created "src\bin\cli.js"
+successfully created "src\helpers\files.js"
+successfully created "src\helpers\directory.js"
 ```
+
 ```bash
+# Usage with option "base"
+touch-win --base src/components/new_component component.js style.sass
+
+# return
 successfully created "src\components\new_component\style.sass"
 successfully created "src\components\new_component\component.js"
 ```
