@@ -10,14 +10,18 @@ const files = argv._;
 const verbose = argv.verbose;
 
 files.forEach((file) => {
+  if (argv.base) {
+    file = argv.base + "\\" + file;
+    console.log(file);
+  }
+
   const path_file = path.normalize(file).split("\\");
-  const count_path = path_file.length - 1;
 
   let dir_path = ".";
   path_file.forEach((current_path, index) => {
     dir_path = dir_path + "/" + current_path;
     const normalize_path = path.normalize(dir_path);
-    if (count_path !== index) {
+    if (path_file.length - 1 !== index) {
       create_directory(normalize_path, verbose);
       return;
     }

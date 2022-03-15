@@ -8,6 +8,11 @@ const yargs = require("yargs")(process.argv.slice(2))
     type: "boolean",
     default: false,
     describe: "Run with verbose logging",
+  })
+  .option("b", {
+    alias: "base",
+    type: "string",
+    describe: "Base folder to place the file(s)",
   }).argv;
 
 module.exports = yargs;
