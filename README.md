@@ -1,36 +1,52 @@
-# touch-win
+# 🧑‍💻 Touch Win
 
-> Touch-win allows you to use the Linux "touch" command on Windows.
+This project provides a simple and fast solution to create multiple files from a single command; Touch-win is inspired by the "touch" command found on Linux and UNIX based systems.
 
-## About
+![image](./touch-win-screenshot.jpg)
 
-This project provides a simple solution to create multiple files from a single command. Touch-win simulates the "touch" command found on Linux and UNIX based systems.
+##  ✨ Features
+- Allows you to create multiple files with a single command.
+- Automatically creates the necessary folders for the location of the file to create if it does not exist.
+- Allows you to create files from a base path
 
-## Install
+<!-- ## ⚡️ Requirements -->
 
+## 📦 Installation
+Install touch-win with your package manager:
+
+#### NPM
 ```bash
 npm install -g touch-win
 ```
 
-### Usage
-
+## 🚀 Usage
 ```bash
-touch-win [options] [files ...]
-```
-
-**Use the command `touch-win -h` or `touch-win --help` for more information**
-
-### Features
-- Allows you to create multiple files with a single command.
-- Automatically creates the necessary folders for the location of the file to create if it does not exist. `touch-win src/bin/app.js`
-#### Examples
-
-```bash
-touch-win my_file.txt
+touch-win --help
 ```
 
 ```bash
-touch-win index.html css/style.css js/main.js
+Usage: index.js [options] [file ...]
+
+Options:
+      --version  Show version number                                   [boolean]
+  -h, --help     Show help                                             [boolean]
+  -v, --verbose  Run with verbose logging             [boolean] [default: false]
+  -b, --base     Base folder to place the file(s)                       [string]
+
+Examples:
+  index.js [options] [file ...]  Create file(s)
 ```
 
-:warning: **This package is still under development, so it may have some bugs.**
+### Base
+This option allows you to create files from a base path, this will help you not to repeat the same path in each file.
+
+#### Example
+```bash
+touch-win --base src/components/new_component component.js style.sass
+```
+```bash
+successfully created "src\components\new_component\style.sass"
+successfully created "src\components\new_component\component.js"
+```
+___
+**⚠️ WARNING:** This package is still under development, so it may have some bugs.

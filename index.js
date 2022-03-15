@@ -12,7 +12,6 @@ const verbose = argv.verbose;
 files.forEach((file) => {
   if (argv.base) {
     file = argv.base + "\\" + file;
-    console.log(file);
   }
 
   const path_file = path.normalize(file).split("\\");

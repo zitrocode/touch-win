@@ -1,6 +1,6 @@
 {
   "name": "touch-win",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "This package written in JavaScript allows you to use the Linux \"touch\" command on Windows.",
   "main": "./index.js",
   "bin": {
