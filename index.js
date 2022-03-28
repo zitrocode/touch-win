@@ -4,7 +4,6 @@ const path = require("path");
 
 const updateNotifier = require("update-notifier");
 const pkg = require("./package.json");
-const notifier = updateNotifier({pkg});
 
 const argv = require("./src/bin/cli");
 const touch = require("./src/helpers/touch");
@@ -12,6 +11,13 @@ const create_directory = require("./src/helpers/directory");
 
 const files = argv._;
 const verbose = argv.verbose;
+
+// Show message if there is any update.
+const notifier = updateNotifier({pkg});
+notifier.notify({
+  isGlobal: true,
+  message: "Run `{updateCommand}` to update"
+});
 
 files.forEach((file) => {
   if (argv.base) {
@@ -32,8 +38,5 @@ files.forEach((file) => {
 
     // Create file.
     touch(normalize_path, verbose);
-
-    // Show message if there is any update.
-    notifier.notify({ message: "Run `{updateCommand}` -g to update" });
   });
 });
