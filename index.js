@@ -12,13 +12,6 @@ const create_directory = require("./src/helpers/directory");
 const files = argv._;
 const verbose = argv.verbose;
 
-// Show message if there is any update.
-const notifier = updateNotifier({pkg});
-notifier.notify({
-  isGlobal: true,
-  message: "Run `{updateCommand}` to update"
-});
-
 files.forEach((file) => {
   if (argv.base) {
     file = argv.base + "\\" + file;
@@ -40,3 +33,7 @@ files.forEach((file) => {
     touch(normalize_path, verbose);
   });
 });
+
+// Show message if there is any update.
+const notifier = updateNotifier({ pkg, updateCheckInterval: 100 * 60 * 60 * 24 });
+notifier.notify({ isGlobal: true });
