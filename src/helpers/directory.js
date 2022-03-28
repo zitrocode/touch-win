@@ -1,17 +1,23 @@
 const fs = require("fs");
 const colors = require("colors");
 
-const create_directory = (dir_path, verbose) => {
-  if (!fs.existsSync(dir_path)) {
-    fs.mkdir(dir_path, { recursive: true }, (error) => {
+/**
+ * Create folder from a path.
+ * @param {string} dirPath - The path of the folder to create.
+ * @param {boolean} verbose - Actived details information (default: false).
+ */
+
+const create_directory = (dirPath, verbose) => {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdir(dirPath, { recursive: true }, (error) => {
       if (error) {
-        console.log(colors.red(`could not created folder "${dir_path}"`));
+        console.log(colors.red(`could not created folder "${dirPath}"`));
         return;
       }
 
       verbose &&
         console.log(
-          colors.gray(`The "${dir_path}" folder has been created successfully`)
+          colors.gray(`The "${dirPath}" folder has been created successfully`)
         );
     });
   }

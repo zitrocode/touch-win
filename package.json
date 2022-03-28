@@ -1,6 +1,6 @@
 {
   "name": "touch-win",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "This package written in JavaScript allows you to use the Linux \"touch\" command on Windows.",
   "main": "./index.js",
   "bin": {
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/zitrocode/touch-win#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "update-notifier": "^5.1.0",
     "yargs": "^17.3.1"
   }
 }

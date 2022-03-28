@@ -7,7 +7,7 @@ This project provides a simple and fast solution to create multiple files from a
 ##  ✨ Features
 - Allows you to create multiple files with a single command.
 - Automatically creates the necessary folders for the location of the file to create if it does not exist.
-- Allows you to create files from a base path
+- Allows you to create files from a base path.
 
 <!-- ## ⚡️ Requirements -->
 

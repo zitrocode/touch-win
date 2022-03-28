@@ -1,6 +1,6 @@
 const yargs = require("yargs")(process.argv.slice(2))
-  .usage("Usage: $0 [options] [file ...]")
-  .example("$0 [options] [file ...]", "Create file(s)")
+  .usage("Usage: touch-win [options] [file ...]")
+  .example("touch-win [options] [file ...]", "Create file(s)")
   .help("h")
   .alias("h", "help")
   .option("v", {

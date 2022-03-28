@@ -2,6 +2,10 @@
 
 const path = require("path");
 
+const updateNotifier = require("update-notifier");
+const pkg = require("./package.json");
+const notifier = updateNotifier({pkg});
+
 const argv = require("./src/bin/cli");
 const touch = require("./src/helpers/touch");
 const create_directory = require("./src/helpers/directory");
@@ -21,10 +25,15 @@ files.forEach((file) => {
     dir_path = dir_path + "/" + current_path;
     const normalize_path = path.normalize(dir_path);
     if (path_file.length - 1 !== index) {
+      // Create directory.
       create_directory(normalize_path, verbose);
       return;
     }
 
+    // Create file.
     touch(normalize_path, verbose);
+
+    // Show message if there is any update.
+    notifier.notify({ message: "Run `{updateCommand}` -g to update" });
   });
 });
