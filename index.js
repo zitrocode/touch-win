@@ -6,8 +6,8 @@ const updateNotifier = require("update-notifier");
 const pkg = require("./package.json");
 
 const argv = require("./src/bin/cli");
-const touch = require("./src/helpers/touch");
-const create_directory = require("./src/helpers/directory");
+const createFile = require("./src/helpers/file");
+const createDirectory = require("./src/helpers/directory");
 
 const files = argv._;
 const verbose = argv.verbose;
@@ -25,12 +25,12 @@ files.forEach((file) => {
     const normalize_path = path.normalize(dir_path);
     if (path_file.length - 1 !== index) {
       // Create directory.
-      create_directory(normalize_path, verbose);
+      createDirectory(normalize_path, verbose);
       return;
     }
 
     // Create file.
-    touch(normalize_path, verbose);
+    createFile(normalize_path, verbose);
   });
 });
 

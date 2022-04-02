@@ -1,5 +1,5 @@
 const fs = require("fs");
-const colors = require("colors");
+const alerts = require("./alerts");
 
 /**
  * Create file from a path.
@@ -9,23 +9,23 @@ const colors = require("colors");
  * however, details still need to be polished.
  */
 
-const touch = (filename) => {
+const file = (filename) => {
   // NOTE: Add functionality to be able to replace the file.
   if (fs.existsSync(filename)) {
     // If the file exists, we just display a warning.
-    console.log(colors.yellow(`"${filename}" already exists`));
+    alerts.warning(`"${filename}" already exists`);
     return;
   }
 
   // Create file
   fs.writeFile(filename, "", (error) => {
     if (error) {
-      console.log(colors.red(`could not create file ${filename}. ${error}`));
+      alerts.error(`could not create file ${filename}. ${error}`);
       return;
     }
 
-    console.log(colors.green(`successfully created "${filename}"`));
+    alerts.success(`successfully created "${filename}"`);
   });
 };
 
-module.exports = touch;
+module.exports = file;
