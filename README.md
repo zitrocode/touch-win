@@ -3,7 +3,7 @@
 
 <!-- Basic information -->
 <div align="center">
-  <a href="github.com/zitrocode/touch-win">
+  <a href="https://github.com/zitrocode/touch-win">
     <img src="./images/touch-win-logo.png" alt="Touch Win Logo">
   </a>
   <!-- <h3>Touch Win</h3> -->
@@ -45,12 +45,15 @@
 
 ---
 
+> If you think that touch-win is a great project, consider making a small donation to be able to continue creating more projects like this. <a href="https://github.com/sponsors/zitrocode">GitHub Sponsor</a>.
+
+<br>
 <div align="center">
-  <img src="./images/touch-win.jpg" width="90%">
+  <img src="./images/Touch Win.png" width="90%" style="border-radius: 10px;">
 </div>
 <br>
 
-Touch win is a cli program that helps you create various files with a single command, it is inspired by the "touch" command found natively in Linux and Unix based operating systems. Even though there are several programs/packages in [npmjs](https://npmjs.com) that help you get this command on Windows, **I assure you that there is no one like it**.
+**[Touch Win](https://github.com/zitrocode)** is a cli program that helps you create various files with a single command, it is inspired by the "touch" command found natively in Linux and Unix based operating systems. Even though there are several programs/packages in [npmjs](https://npmjs.com) that help you get this command on Windows, **I assure you that there is no one like it**.
 
 ## ✨ Features
 
@@ -90,46 +93,39 @@ Examples:
 
 As you have seen, **Touch Win** has some options that will help you create a new file:
 
-### Examples
+#### 👨‍💻 With Base Option:
+
+Forget to write the same path for the files you want to create with this option you can do it.
 
 ```bash
-# Standard use
-touch-win src/bin/cli.js src/helpers/file.js src/helpers/directory.js
-
-# Return
-successfully created "src\bin\cli.js"
-successfully created "src\helpers\files.js"
-successfully created "src\helpers\directory.js"
+touch-win --base src/helpers/ alerts.js directory.js file.js
 ```
+
+#### 👨‍💻 With Template Option:
+
+It has a similarity with the "Base" option, the difference arises when you only need small changes in the names or paths of the files.
 
 ```bash
-# Use with option "base"
-touch-win --base src/components/new_component component.js style.sass
-
-# return
-successfully created "src\components\new_component\style.sass"
-successfully created "src\components\new_component\component.js"
+touch-win --template config/webpack.[rf].js common dev build
 ```
 
-```bash
-# Use with option "template"
-touch-win --template src/components/NewComponent.[rf] js test.js css
+**Note:** It's important to put `[rf]` where you want it to be replaced by the arguments.
 
-# return
-successfully created "src\components\NewComponent.js"
-successfully created "src\components\NewComponent.test.js"
-successfully created "src\components\NewComponent.css"
-```
+<details>
+  <summary>More examples with "template"</summary>
 
-```bash
-# Use with option "template"
-touch-win --template config/webpack.[rf].js dev build common
+  <br>
+  <p><strong>Change extensions:</strong></p>
+  <code>
+    touch-win -t src/components/my_component.[rf] js css
+  </code>
 
-# return
-successfully created "config\webpack.dev.js"
-successfully created "config\webpack.build.js"
-successfully created "config\webpack.common.js"
-```
+  <br>
+  <p><strong>Rename the file:</strong></p>
+  <code>
+    touch-win -t src/helpers/[rf].js alerts directory file
+  </code>
+</details>
 
 ---
 
