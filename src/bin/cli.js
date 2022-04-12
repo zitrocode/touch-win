@@ -1,6 +1,7 @@
 const yargs = require("yargs")
+const { hideBin } = require("yargs/helpers");
 
-yargs(process.argv.slice(2))
+yargs(hideBin(process.argv))
   .usage("Usage: touch-win [options] [file ...]")
   .example("touch-win [options] [file ...]", "Create file(s)")
   .example("touch-win src/bin/cli.js src/helpers/file.js src/helpers/directory.js", "Standard use")
@@ -25,7 +26,6 @@ yargs(process.argv.slice(2))
     alias: "template",
     type: "string",
     describe: "Template to generate files"
-  })
-  .argv;
+  });
 
 module.exports = yargs;

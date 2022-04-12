@@ -4,7 +4,7 @@ const path = require("path");
 const updateNotifier = require("update-notifier");
 const pkg = require("./package.json");
 
-const argv = require("./src/bin/cli");
+const argv = require("./src/bin/cli").argv;
 const createFile = require("./src/helpers/file");
 const createDirectory = require("./src/helpers/directory");
 const alerts = require("./src/helpers/alerts");
