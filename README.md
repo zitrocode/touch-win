@@ -45,7 +45,11 @@
 
 ---
 
-> If you think that touch-win is a great project, consider making a small donation to be able to continue creating more projects like this. <a href="https://github.com/sponsors/zitrocode">GitHub Sponsor</a>.
+> If you think touch-win is a support for you, please consider making a small donation so that I can continue to allocate time to do more projects like this. <a href="https://github.com/sponsors/zitrocode"><strong>GitHub Sponsor</strong></a>.
+
+<div align="center">
+  <a href="https://ko-fi.com/M4M8C5NAP"><img src="https://ko-fi.com/img/githubbutton_sm.svg"></a>
+</div>
 
 <br>
 <div align="center">
@@ -53,7 +57,9 @@
 </div>
 <br>
 
-**[Touch Win](https://github.com/zitrocode)** is a cli program that helps you create various files with a single command, it is inspired by the "touch" command found natively in Linux and Unix based operating systems. Even though there are several programs/packages in [npmjs](https://npmjs.com) that help you get this command on Windows, **I assure you that there is no one like it**.
+**[Touch Win](https://github.com/zitrocode/touch-win)** is a cli program that helps you create various files with a single command, it is inspired by the "touch" command found natively in Linux and Unix based operating systems. Even though there are several programs/packages in [npmjs](https://www.npmjs.com/package/touch-win) that help you get this command on Windows, **I assure you that there is no one like it**.
+
+🧠 **Don't forget** to give a ⭐ if you like this project!
 
 ## ✨ Features
 
@@ -106,27 +112,25 @@ touch-win --base src/helpers/ alerts.js directory.js file.js
 It has a similarity with the "Base" option, the difference arises when you only need small changes in the names or paths of the files.
 
 ```bash
-touch-win --template config/webpack.[rf].js common dev build
+touch-win --template config/webpack.[rn].js common dev build
 ```
 
-**Note:** It's important to put `[rf]` where you want it to be replaced by the arguments.
+**Note:** It's important to put `[rn]` where you want it to be replaced by the arguments.
 
 <details>
   <summary>More examples with "template"</summary>
-
   <br>
   <p><strong>Change extensions:</strong></p>
   <code>
-    touch-win -t src/components/my_component.[rf] js css
+    touch-win -t src/components/my_component.[rn] js css
   </code>
-
   <br>
   <p><strong>Rename the file:</strong></p>
   <code>
-    touch-win -t src/helpers/[rf].js alerts directory file
+    touch-win -t src/helpers/[rn].js alerts directory file
   </code>
 </details>
 
----
+## 📝 License
 
-⚠️ **WARNING**: This package is still under development, so it may have some bugs.
+This project is **[MIT](./LICENSE)** licensed.

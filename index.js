@@ -23,14 +23,14 @@ files.forEach((file) => {
   }
 
   if (template) {
-    if (!template.includes("[rf]")) {
+    if (!template.includes("[rn]")) {
       opts.error = true;
 
-      alerts.error('Check that the template has "[rf]"');
+      alerts.error('Check that the template has "[rn]"');
       return;
     }
 
-    file = template.replace("[rf]", file);
+    file = template.replace("[rn]", file);
   }
 
   const path_file = path.normalize(file).split("\\");
