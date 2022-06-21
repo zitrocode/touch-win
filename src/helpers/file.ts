@@ -1,5 +1,5 @@
-import fs from "fs";
-import { warning, error, success } from "./alerts";
+import fs from 'fs';
+import { warning, error, success } from './alerts';
 
 /**
  * Create file from path.
@@ -17,7 +17,7 @@ export const createFile = (filename: string): void => {
   }
 
   // Create file if it doesn't exist's
-  fs.writeFile(filename, "", (err) => {
+  fs.writeFile(filename, '', (err) => {
     if (err) {
       error(`could not create file ${filename}.`);
       return;
