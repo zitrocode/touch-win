@@ -86,15 +86,17 @@ touch-win --help
 Usage: touch-win [options] [file ...]
 
 Options:
-      --version   Show version number                                                               [boolean]
-  -h, --help      Show help                                                                         [boolean]
-  -v, --verbose   Run with verbose logging                                         [boolean] [default: false]
+  -a, --author    Show the profile of the author of this package                                    [boolean]
   -b, --base      Base folder to place the file(s)                                                   [string]
   -t, --template  Template to generate files                                                         [string]
-Examples:
-  touch-win [options] [file ...]                                                   Create file(s)
+  -v, --version   Show version number                                                               [boolean]
+  -h, --help      Show help                                                                         [boolean]
 
+Examples:
   touch-win src/bin/cli.js src/helpers/file.js src/helpers/directory.js            Standard use
+  touch-win --base src/components/new_component Component.js Component.css         Use with option "base"
+  touch-win --template src/components/new_component/Component.[rn] js test.js css  Use with option "template"
+  touch-win --template config/webpack.[rn].js build dev common                     Use with option "template"
 ```
 
 As you have seen, **Touch Win** has some options that will help you create a new file:

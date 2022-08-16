@@ -3,10 +3,11 @@
     "module": "CommonJS",
     "target": "ES2015",
     "strict": true,
-    "outDir": "lib",
+    "outDir": "bin",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "moduleResolution": "node"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

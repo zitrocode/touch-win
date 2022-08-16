@@ -2,27 +2,25 @@ import fs from 'fs';
 import { warning, error, success } from './alerts';
 
 /**
- * Create file from path.
- * @param  {string} filename - The path to the file to create.
+ * Create file from path
+ * @param {string} filename - The path to the file to create.
  *
- * @returns void
- *
- * Currently this code fragment works correctly,
- * however, details still need to be polished.
+ * @return void
  */
-export const createFile = (filename: string): void => {
+
+export const create_file = (filename: string) => {
   if (fs.existsSync(filename)) {
-    warning(`"${filename}" already exists`);
+    warning(`"${filename}" al ready exists`);
     return;
   }
 
   // Create file if it doesn't exist's
-  fs.writeFile(filename, '', (err) => {
+  fs.writeFile(filename, '', err => {
     if (err) {
-      error(`could not create file ${filename}.`);
+      error(`Could not create file "${filename}"`);
       return;
     }
 
-    success(`successfully created file "${filename}"`);
+    success(`Successfully created file "${filename}"`);
   });
 };

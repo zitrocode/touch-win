@@ -1,51 +1,53 @@
 #!/usr/bin/env node
 import path from 'path';
-import updateNotifier from 'update-notifier';
-import pkg from '../package.json';
+import open from 'open';
 
-import { argv } from './bin/cli';
-import { error } from './helpers/alerts';
-import { system } from './helpers/system';
-import { createFile } from './helpers/file';
-import { createFolder } from './helpers/directory';
+import { argv } from './lib/cli';
+import { info, error } from './helpers/alerts';
+import { create_folder } from './helpers/directory';
+import { create_file } from './helpers/file';
 
-const files: string[] = argv._;
-const base: string = argv.base;
-const template: string = argv.template;
-const isVerbose: boolean = argv.verbose;
+if (Object.keys(argv).length <= 3 && argv._.length === 0) {
+  info(`Use the command "${argv.$0} --help" for help`);
+}
 
-files.forEach((file: string) => {
-  if (base) file = base + system() + file;
+if (argv.author) {
+  open('https://github.com/sponsors/zitrocode');
+}
 
-  if (template) {
-    if (!template.includes('[rn]')) {
-      error('check that the template has "[rn]"');
-      return;
+if (argv._.length !== 0) {
+  argv._.forEach((file: string | number) => {
+    // Convert file to string
+    file = file.toString();
+    let base_path = path.join(file);
+
+    if (argv.base) {
+      base_path = path.join(argv.base, file);
     }
 
-    file = template.replace('[rn]', file);
-  }
+    if (argv.template) {
+      if (!argv.template.includes('[rn]')) {
+        error('Check that template has "[rn]"');
+        return;
+      }
 
-  const pathFile: string[] = path.normalize(file).split(system());
-
-  let dirPath = '.';
-  pathFile.forEach((currentPath: string, index: number) => {
-    dirPath = dirPath + '/' + currentPath;
-    const normalizePath: string = path.normalize(dirPath);
-    if (pathFile.length - 1 !== index) {
-      // Create directory
-      createFolder(normalizePath, isVerbose);
-      return;
+      file = argv.template.replace('[rn]', file);
+      base_path = path.join(file);
     }
 
-    // Create file
-    createFile(normalizePath);
+    const path_split = base_path.split(path.sep);
+    let path_file = '.';
+    path_split.forEach((currentPath: string, index: number) => {
+      path_file = path.normalize(path_file + path.sep + currentPath);
+
+      if (path_split.length - 1 !== index) {
+        // Create directory
+        create_folder(path_file);
+        return;
+      }
+
+      // Create file
+      create_file(path_file);
+    });
   });
-});
-
-// Show message if there is any update.
-const notifier = updateNotifier({
-  pkg,
-  updateCheckInterval: 100 * 60 * 60 * 24,
-});
-notifier.notify({ isGlobal: true });
+}
