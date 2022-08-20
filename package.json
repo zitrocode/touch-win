@@ -1,13 +1,13 @@
 {
   "name": "touch-win",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool that will allow you to use the 'touch' command on steroids to create multiple files using the terminal on any operating system.",
   "main": "bin/index.js",
   "bin": {
     "touch-win": "./bin/index.js"
   },
   "scripts": {
-    "prepare": "yarn build",
+    "prepare": "npm run build",
     "build": "rimraf ./bin && tsc",
     "test": "jest"
   },
