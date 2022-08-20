@@ -1,17 +1,6 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-interface Argv {
-  _: (string | number)[];
-  base?: string;
-  author?: boolean;
-  template?: string;
-  b?: string;
-  a?: boolean;
-  t?: string;
-  $0: string;
-}
-
 const cli = yargs(hideBin(process.argv))
   .scriptName('touch-win')
   .usage('$0 [options] [file ...]')
@@ -50,6 +39,7 @@ const cli = yargs(hideBin(process.argv))
     'touch-win --template config/webpack.[rn].js build dev common',
     'Use with option "template"'
   )
-  .help().argv;
+  .help()
+  .parseSync();
 
-export const argv: Argv = JSON.parse(JSON.stringify(cli));
+export default cli;

@@ -1,6 +1,6 @@
 {
   "name": "touch-win",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tool that will allow you to use the 'touch' command on steroids to create multiple files using the terminal on any operating system.",
   "main": "bin/index.js",
   "bin": {
@@ -29,7 +29,6 @@
   "private": false,
   "dependencies": {
     "chalk": "4.1.2",
-    "open": "8.4.0",
     "yargs": "17.5.1"
   },
   "devDependencies": {
