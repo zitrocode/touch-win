@@ -8,7 +8,9 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build": "rimraf ./bin && tsc",
+    "dev:win": ".\\node_modules\\.bin\\rimraf .bin\\ && tsc",
+    "dev": "./node_modules/.bin/rimraf .bin/ && tsc",
+    "build": "tsc",
     "test": "jest"
   },
   "repository": "git+https://github.com/zitrocode/touch-win.git",
@@ -40,6 +42,7 @@
     "eslint": "8.22.0",
     "jest": "28.1.3",
     "prettier": "2.7.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "28.0.8",
     "typescript": "4.7.4"
   }
