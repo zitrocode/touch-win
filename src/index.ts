@@ -44,14 +44,14 @@ import { create_file } from './helpers/file';
       path_split.forEach((currentPath: string, index: number) => {
         path_file = path.normalize(path_file + path.sep + currentPath);
 
-        if (path_split.length - 1 !== index) {
-          // Create directory
-          create_folder(path_file);
+        if (path_split.length - 1 === index && !argv.D) {
+          // Create file
+          create_file(path_file);
           return;
         }
 
-        // Create file
-        create_file(path_file);
+        // Create director
+        create_folder(path_file);
       });
     });
   }

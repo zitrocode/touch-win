@@ -21,6 +21,11 @@ const cli = yargs(hideBin(process.argv))
     type: 'string',
     describe: 'Template to generate files'
   })
+  .option('D', {
+    alias: 'directories-only',
+    type: 'boolean',
+    describe: 'Create directories only'
+  })
   .alias('h', 'help')
 
   .example(

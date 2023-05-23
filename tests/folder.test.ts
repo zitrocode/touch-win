@@ -1,5 +1,7 @@
 import { create_folder } from '../src/helpers/directory';
 
-test('Create a folder inside "tests" with the name "files_test"', () => {
-  expect(() => create_folder('tests/files_test')).toMatchSnapshot('');
+const nameDir = 'tests/dir_test';
+
+test(`Create a folder inside "tests" with the name "${nameDir}"`, (): void => {
+  expect(() => create_folder(nameDir)).toMatchSnapshot('');
 });
