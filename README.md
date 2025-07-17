@@ -4,7 +4,7 @@
 <!-- Basic information -->
 <div align="center">
   <a href="https://github.com/zitrocode/touch-win">
-    <img src="./images/touch-win__logo.png" alt="Touch Win Logo">
+    <img src="./images/touch-win__logo.png" height="150px" alt="Touch Win Logo">
   </a>
   <!-- <h3>Touch Win</h3> -->
   <br>
