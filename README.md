@@ -4,9 +4,10 @@
 <!-- Basic information -->
 <div align="center">
   <a href="https://github.com/zitrocode/touch-win">
-    <img src="./images/touch-win-logo.png" alt="Touch Win Logo">
+    <img src="./images/touch-win__logo.png" alt="Touch Win Logo">
   </a>
   <!-- <h3>Touch Win</h3> -->
+  <br>
   <br>
   <p>
     A tool that will allow you to create multiple files using the terminal in Windows.
@@ -46,10 +47,6 @@
 ---
 
 > If you think touch-win is a support for you, please consider making a small donation so that I can continue to allocate time to do more projects like this. <a href="https://github.com/sponsors/zitrocode"><strong>GitHub Sponsor</strong></a>.
-
-<div align="center">
-  <a href="https://ko-fi.com/M4M8C5NAP"><img src="https://ko-fi.com/img/githubbutton_sm.svg"></a>
-</div>
 
 <br>
 <div align="center">
